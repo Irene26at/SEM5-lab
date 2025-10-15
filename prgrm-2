@@ -1,0 +1,38 @@
+alter table employeeecseb07 add city varchar(50);
+
+alter table employeeecseb07 modify salary number(10,3);
+
+ alter table employeeecseb07 add constraint sal check((salary >0));
+
+alter table employeeecseb07 drop constraint sal;
+
+
+insert into departmenttcseb07 values(1,'computer science','cse');
+insert into departmenttcseb07 values(2,'electronics','ece');
+insert into departmenttcseb07 values(3,'electrical','eee');
+insert into departmenttcseb07 values(4,'mechanical','me');
+insert into departmenttcseb07 values(5,'information tech','it');
+
+ insert into projecttcseb07 values('p1','web design',1);
+insert into projecttcseb07 values('p2','ardruino',2);
+insert into projecttcseb07 values('p3','vlsxi',3);
+insert into projecttcseb07 values('p4','autocad',4);
+insert into projecttcseb07 values('p5','hardware',5);
+
+insert into employeeecseb07 values('e1','linta','tester','f',20,25000.000,to_date('2024-06-07','yyyy-mm-dd'),'p1','kollam');
+insert into employeeecseb07 values('e2','swati','intern','f',20,15000.000,to_date('2025-07-07','yyyy-mm-dd'),'p2','kollam');
+insert into employeeecseb07 values('e3','ivan','developer','m',20,35000.000,to_date('2022-12-18','yyyy-mm-dd'),'p3','tvm');
+insert into employeeecseb07 values('e4','hk','editor','m',25,37000.500,to_date('2021-01-28','yyyy-mm-dd'),'p4','tvm');
+insert into employeeecseb07 values('e5','nandu','coder','m',35,47000.540,to_date('2020-09-28','yyyy-mm-dd'),'p5','kochi');
+
+select *from projecttcseb07;
+select *from employeeecseb07;
+select *from departmebtcseb07;
+
+insert into employeeecseb07 values('e6','sruti','coder','m',30,40000.540,to_date('2020-09-28','yyyy-mm-dd'),'p6','kochi');
+insert into employeeecseb07 values('e6','sruti','coder','m',30,40000.540,to_date('2020-09-28','yyyy-mm-dd'),'p6','kochi')
+*
+ERROR at line 1:
+ORA-02291: integrity constraint (SYSTEM.SYS_C004064) violated - parent key not found
+
+
