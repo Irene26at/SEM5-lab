@@ -1,0 +1,30 @@
+create table departmenttcseb07(
+    dno number,
+    dname varchar(50),
+    primary key(dno),
+    location varchar(20) check(location in ('cse','me','ece','eee','it'))
+    );
+
+
+    create table projecttcseb07(
+    pno varchar(20) primary key check(pno like 'p%'),
+    pname varchar(50),
+    dno number,
+    foreign key(dno) references departmenttcseb07
+   );
+
+
+
+   
+ create table employeeecseb07(
+    eno varchar(20) primary key check(eno like 'e%'),  // begin with e , like used to select patterns,% used to select more than 1 characters
+    ename varchar(50),
+    designation varchar(50),
+    sex varchar(20) check (sex in('m','f')),    // in used to simplify or condn better
+    age number,
+    check(age>0),
+    salary real,
+    doj date,
+   pno varchar(20),
+   foreign key(pno) references projecttcseb07
+   );
